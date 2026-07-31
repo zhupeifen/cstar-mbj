@@ -1,0 +1,11 @@
+{
+  "title": "cstar-mbj: machine-learned Tran-Blaha mBJ exchange parameter for near-experimental band gaps",
+  "description": "Dataset (152 materials), trained model (Gaussian process + random forest), prediction tool, and automated pipeline for predicting the material-specific optimal TB-mBJ parameter c* from inexpensive PBE descriptors, so that a single meta-GGA calculation yields a near-experimental band gap.",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {"name": "Zhu, Peifen", "affiliation": "University of Missouri"},
+    {"name": "Zhu, Hongyang", "affiliation": "The University of Tulsa"}
+  ],
+  "keywords": ["band gap", "TB-mBJ", "meta-GGA", "density functional theory", "machine learning", "materials"]
+}
