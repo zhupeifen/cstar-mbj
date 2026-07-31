@@ -1,0 +1,3 @@
+material: SnS2   PBE gap = 1.56 eV   grad_ratio = 2.710
+predicted c* = 1.172 +/- 0.063  (GP, primary)   |  1.190  (RF, cross-check)
+  -> run one TB-mBJ SCF with CMBJ = 1.172  (build_pipeline --cstar / tune_cmbj probe)
