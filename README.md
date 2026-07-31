@@ -68,6 +68,14 @@ predicted c* = 1.31 +/- 0.05  (GP, primary)  |  1.30  (RF, cross-check)
 Then run a single mBJ SCF with `CMBJ = <predicted c*>` for a near-experimental gap and a
 self-consistent density/band structure.
 
+## Try the example
+
+A ready-to-run demo on SnS₂ (with bundled gzipped PBE inputs):
+```
+cd example && python run_demo.py
+```
+See `example/README.md`.
+
 ## Reproduce the model and analysis
 
 The analysis scripts read the dataset CSVs from the working directory:
