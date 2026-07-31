@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+fig_data/
+figures/
+*.log
