@@ -1,0 +1,31 @@
+{
+  "features": [
+    "n_species",
+    "natoms",
+    "volume_per_atom",
+    "density",
+    "mean_electroneg",
+    "electroneg_spread",
+    "mean_Z",
+    "max_Z",
+    "mean_row",
+    "valence_e_per_atom",
+    "grad_ratio",
+    "mp_pbe_gap",
+    "c_selfconsistent",
+    "pbe_gap",
+    "band_center"
+  ],
+  "n_train": 128,
+  "target": "c_star",
+  "cv_gp": {
+    "loo_mae": 0.1002,
+    "loo_r2": 0.547
+  },
+  "cv_rf": {
+    "loo_mae": 0.1103,
+    "loo_r2": 0.447
+  },
+  "trained": "2026-07-31",
+  "note": "predict TB-mBJ optimal c* from cheap descriptors; GP gives sigma. pbe_gap==mp_pbe_gap (PBE gap)."
+}
