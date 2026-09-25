@@ -13,19 +13,20 @@ prediction tool, and the full automated pipeline behind the paper.
 The TB-mBJ meta-GGA gives near-hybrid band gaps at semilocal cost, but its accuracy depends on
 one empirical parameter *c* that is material-dependent and unknown a priori. The built-in
 density-based self-consistent *c* is **anti-predictive** for the gap-reproducing value
-(leave-one-out R² = −0.74 across our 128-material set). We instead **learn** c\*: a Gaussian-process
-model predicts it with a leave-one-out MAE of **0.100** (≈0.3 eV in the gap). A single mBJ run at
-the predicted c\* reaches experiment with a mean absolute error of **0.37 eV**, versus 0.56 eV for
-the best possible universal *c* and 0.76 eV for the self-consistent prescription.
+(leave-one-out R² = −0.69 across our 149-material set). We instead **learn** c\*: a Gaussian-process
+model predicts it with a leave-one-out MAE of **0.110** (≈0.3 eV in the gap). A single mBJ run at
+the predicted c\* reaches experiment with a mean absolute error of **0.36 eV**, versus 0.54 eV for
+the best possible universal *c* and 0.72 eV for the self-consistent prescription.
 
 ## What's here
 
 ```
 cstar-mbj/
 ├── data/
-│   ├── cstar_dataset.csv        # 152 materials (full, with QC labels)
-│   ├── cstar_dataset_clean.csv  # 128 clean materials (model training set)
-│   └── cstar_dataset_qc.csv     # QC-annotated copy
+│   ├── cstar_dataset.csv        # 177 materials (full, with QC labels)
+│   ├── cstar_dataset_clean.csv  # 149 clean materials (model training set)
+│   ├── cstar_dataset_qc.csv     # QC-annotated copy
+│   └── structures/              # PBEsol-relaxed structures (POSCAR), 135 of 177; see README there
 ├── model/
 │   ├── cstar_model.joblib       # trained GP (primary) + RF, 15 features
 │   └── cstar_model.meta.json    # features, CV scores, training date
