@@ -12,12 +12,14 @@ prediction tool, and the automated pipeline behind the paper.
 
 The TB-mBJ meta-GGA gives near-hybrid band gaps at semilocal cost, but its accuracy depends on
 one empirical parameter *c* whose best value is material-dependent and unknown a priori. The
-built-in density-based self-consistent *c* predicts the gap-reproducing value worse than a constant
-(R² = −0.23 on our 100 clean materials). We define c\* as the value of *c* that reproduces the
+Tran–Blaha formula for *c*, evaluated on a PBEsol density, predicts the gap-reproducing value worse
+than a constant (R² = −0.23 on our 100 clean materials). We define c\* as the value of *c* that reproduces the
 measured fundamental gap and learn it from fourteen inexpensive descriptors. A random forest
 predicts c\* with a leave-one-out MAE of **0.097** (R² = 0.54), about 0.3 eV in the gap. A single
 mBJ calculation at the predicted c\* reaches experiment with a mean absolute error of **0.30 eV**,
-against 0.56 eV for the best universal *c* and 0.62 eV for the self-consistent prescription.
+against 0.56 eV for the best universal *c* and 0.62 eV for the Tran–Blaha formula on the PBEsol
+density. On the 93 clean materials shared with the benchmark of Borlido *et al.*, the error is 0.29 eV,
+against 0.44 eV for self-consistent mBJ and 0.52 eV for HSE06 (values from that benchmark).
 
 ## Version 1.2.0 (November 2026): corrected dataset
 
