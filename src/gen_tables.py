@@ -8,7 +8,7 @@ def num(x):
     m=re.search(r'[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?',str(x)); return float(m.group()) if m else np.nan
 FEATURES=["n_species","natoms","volume_per_atom","density","mean_electroneg","electroneg_spread",
           "mean_Z","max_Z","mean_row","valence_e_per_atom","grad_ratio","mp_pbe_gap",
-          "c_selfconsistent","pbe_gap","band_center"]
+          "c_selfconsistent","band_center"]
 rows=list(csv.DictReader(open("cstar_dataset.csv")))
 clean=[r for r in rows if r["qc_pass"]=="1"]
 X=np.array([[num(r[f]) for f in FEATURES] for r in clean]); y=np.array([float(r["c_star"]) for r in clean])

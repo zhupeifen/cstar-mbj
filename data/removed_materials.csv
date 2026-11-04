@@ -1,0 +1,62 @@
+formula,spacegroup,reason
+AgBr,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+AgCl,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaO,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaS,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaSe,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaSnO3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaTiO3,P4mm,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaZrO3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+Cs2AgBiBr6,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+Cs2AgInCl6,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsBr,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsCl,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsF,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsGeBr3,R3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsGeCl3,R3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsGeI3,R3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsI,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsPbBr3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsPbI3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsSnBr3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsSnCl3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CsSnI3,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CuBr,F-43m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+CuCl,F-43m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+KBr,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+KCl,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+La2O3,P-3m1,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+LaAlO3,R-3c,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+NaBr,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+NaCl,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+RbCl,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+SrCl2,Fm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+TlCl,Pm-3m,"mBJ probe not converged (ALGO=Damped 250, All 500, Damped TIME=0.1 1000)"
+BaHfO3,Pm-3m,no traceable bulk measurement of the gap
+BAs,F-43m,no traceable bulk measurement of the gap
+BaTe,Fm-3m,no traceable bulk measurement of the gap
+BeS,F-43m,no traceable bulk measurement of the gap
+CaTe,Fm-3m,no traceable bulk measurement of the gap
+CaTiO3,Pnma,no traceable bulk measurement of the gap
+CaZrO3,Pnma,no traceable bulk measurement of the gap
+CdF2,Fm-3m,no traceable bulk measurement of the gap
+CsPbCl3,Pm-3m,no traceable bulk measurement of the gap
+CuAlTe2,I-42d,no traceable bulk measurement of the gap
+Ga2O3,C2/m,no traceable bulk measurement of the gap
+GeS,Pnma,no traceable bulk measurement of the gap
+InSe,R3m,no traceable bulk measurement of the gap
+KMgF3,Pm-3m,no traceable bulk measurement of the gap
+KNbO3,Pm-3m,no traceable bulk measurement of the gap
+LiGaO2,Pna2_1,no traceable bulk measurement of the gap
+LiI,Fm-3m,no traceable bulk measurement of the gap
+MgAl2O4,Fd-3m,no traceable bulk measurement of the gap
+MgS,Fm-3m,no traceable bulk measurement of the gap
+MgSe,Fm-3m,no traceable bulk measurement of the gap
+PbF2,Fm-3m,no traceable bulk measurement of the gap
+PtS2,P-3m1,no traceable bulk measurement of the gap
+SrHfO3,Pnma,no traceable bulk measurement of the gap
+SrTe,Fm-3m,no traceable bulk measurement of the gap
+SrZrO3,Pnma,no traceable bulk measurement of the gap
+ZnF2,P4_2/mnm,no traceable bulk measurement of the gap
+ZnGa2O4,Fd-3m,no traceable bulk measurement of the gap
+ZnTe,F-43m,no traceable bulk measurement of the gap

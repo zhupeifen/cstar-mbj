@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this dataset, model, or workflow, please cite the paper below."
+version: "1.2.0"
 title: "cstar-mbj: machine-learned TB-mBJ exchange parameter for near-experimental band gaps"
 authors:
   - family-names: Zhu

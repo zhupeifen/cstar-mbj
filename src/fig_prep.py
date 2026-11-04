@@ -7,7 +7,7 @@ from pymatgen.core import Composition, Element
 OUT = "fig_data"; os.makedirs(OUT, exist_ok=True)
 FEATURES = ["n_species","natoms","volume_per_atom","density","mean_electroneg","electroneg_spread",
             "mean_Z","max_Z","mean_row","valence_e_per_atom","grad_ratio","mp_pbe_gap",
-            "c_selfconsistent","pbe_gap","band_center"]
+            "c_selfconsistent","band_center"]
 def num(x):
     m=re.search(r'[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?',str(x)); return float(m.group()) if m else np.nan
 

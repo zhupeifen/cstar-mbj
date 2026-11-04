@@ -13,7 +13,7 @@ single mBJ run and no reference. Labels are produced automatically: mBJ is ~line
 Per material
 ------------
   1. fetch structure (mp_fetch)                                  [cheap]
-  2. PBEsol relax                                                [1 DFT job]
+  2. PBEsol SCF on the Materials-Project cell (no relaxation)    [1 DFT job]
   3. PBE SCF -> PBE gap + CHGCAR (for <|grad rho|/rho>)          [1 DFT job]
   4. cheap DESCRIPTORS from the relaxed structure + PBE density  [local, no DFT]
   5. two mBJ gap-probes at c_lo, c_hi (hybrid mesh, fixed c)     [2 DFT jobs]
@@ -33,6 +33,7 @@ from pymatgen.core import Structure, Element, Composition
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import compute_cmbj, tune_cmbj                              # reuse the pipeline tools
+_trapz = getattr(np, "trapezoid", None) or getattr(np, "trapz")   # NumPy 2 renamed trapz
 
 # ----------------------------- cheap descriptors (no mBJ) -----------------------------
 def descriptors(struct: Structure, pbe_gap: float, grad_ratio: float) -> dict:
@@ -178,8 +179,8 @@ def anion_p_center(vasprun):
     E = np.array(pdos.energies) - ef
     rho = sum(np.array(v) for v in pdos.densities.values())
     occ = E <= 0.0
-    den = np.trapz(rho[occ], E[occ])
-    return float(np.trapz((E*rho)[occ], E[occ]) / den) if den > 0 else float("nan")
+    den = _trapz(rho[occ], E[occ])
+    return float(_trapz((E*rho)[occ], E[occ]) / den) if den > 0 else float("nan")
 
 # ----------------------------- probe stage (self-contained hybrid mesh) -----------------------------
 def build_probe_kpoints(kpath_file, out, divs=(4, 4, 4)):
@@ -207,10 +208,11 @@ def process(formula, spacegroup, ref_gap, mp_pbe_gap, workroot, potcar_dir, encu
     subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "build_pipeline.py"), "--poscar", poscar,
                     "--name", name, "--outdir", d, "--encut", str(encut), "--primitive",
                     "--potcar-dir", potcar_dir, "--pts-per-seg", "12"], check=True)  # primitive + coarse path
-    # --- relax (PBEsol) writing CHGCAR for the density gradient feature ---
+    # --- PBEsol SCF on the MP cell, writing CHGCAR for the density gradient feature ---
+    # Single point by default, as used for the published dataset; set MBJ_RELAX=1 to attempt a relaxation.
     rlx = os.path.join(d, "0_relax")
     inc = open(os.path.join(rlx, "INCAR")).read().replace("LCHARG = .FALSE.", "LCHARG = .TRUE.")
-    if os.environ.get("MBJ_SINGLEPOINT"):   # skip the fragile ISIF=3 CG relax; single-point on the (MP-relaxed) cell
+    if not os.environ.get("MBJ_RELAX"):     # single point on the Materials-Project cell (published workflow)
         import re as _re
         inc = _re.sub(r"IBRION\s*=\s*-?\d+", "IBRION = -1", inc)
         inc = _re.sub(r"NSW\s*=\s*\d+", "NSW = 0", inc)

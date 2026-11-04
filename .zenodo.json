@@ -1,15 +1,32 @@
 {
   "title": "cstar-mbj: machine-learned Tran-Blaha mBJ exchange parameter for near-experimental band gaps",
-  "description": "Dataset (177 materials, 149 clean), PBEsol-relaxed structures, trained model (Gaussian process + random forest), prediction tool, and automated pipeline for predicting the material-specific optimal TB-mBJ parameter c* from inexpensive PBE descriptors, so that a single meta-GGA calculation yields a near-experimental band gap.",
+  "description": "Dataset (116 materials, 100 clean; every experimental gap traced to a published source and every mBJ probe verified to be converged), the Materials-Project structures used, trained model (random forest + Gaussian process), prediction tool, convergence checker, and automated pipeline for predicting the material-specific optimal TB-mBJ parameter c* from inexpensive descriptors, so that a single meta-GGA calculation yields a near-experimental band gap.",
   "upload_type": "software",
-  "version": "v1.1.0",
+  "version": "v1.2.0",
   "license": "MIT",
   "related_identifiers": [
-    {"identifier": "https://github.com/zhupeifen/cstar-mbj", "relation": "isSupplementTo", "resource_type": "software"}
+    {
+      "identifier": "https://github.com/zhupeifen/cstar-mbj",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
   ],
   "creators": [
-    {"name": "Zhu, Peifen", "affiliation": "University of Missouri"},
-    {"name": "Zhu, Hongyang", "affiliation": "The University of Tulsa"}
+    {
+      "name": "Zhu, Peifen",
+      "affiliation": "University of Missouri"
+    },
+    {
+      "name": "Zhu, Hongyang",
+      "affiliation": "The University of Tulsa"
+    }
   ],
-  "keywords": ["band gap", "TB-mBJ", "meta-GGA", "density functional theory", "machine learning", "materials"]
+  "keywords": [
+    "band gap",
+    "TB-mBJ",
+    "meta-GGA",
+    "density functional theory",
+    "machine learning",
+    "materials"
+  ]
 }

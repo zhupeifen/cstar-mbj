@@ -9,7 +9,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import LeaveOneOut, cross_val_predict
 
 FEATURES=["n_species","natoms","volume_per_atom","density","mean_electroneg","electroneg_spread",
-          "mean_Z","max_Z","mean_row","valence_e_per_atom","grad_ratio","mp_pbe_gap","c_selfconsistent","pbe_gap",
+          "mean_Z","max_Z","mean_row","valence_e_per_atom","grad_ratio","mp_pbe_gap","c_selfconsistent",
           "band_center"]   # anion-p band center (eV, rel E_F) from a PBE DOS run (LORBIT=11)
 def _num(v):
     m=re.match(r"[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?", str(v).strip()); return float(m.group(0)) if m else float("nan")
@@ -27,7 +27,7 @@ def cvm(m):
     r2=float(1-np.sum((y-p)**2)/np.sum((y-y.mean())**2)); return dict(loo_mae=round(mae,4),loo_r2=round(r2,3))
 meta={"features":FEATURES,"n_train":len(y),"target":"c_star","cv_gp":cvm(gp),"cv_rf":cvm(rf),
       "trained":datetime.date.today().isoformat(),
-      "note":"predict TB-mBJ optimal c* from cheap descriptors; GP gives sigma. pbe_gap==mp_pbe_gap (PBE gap)."}
+      "note":"predict TB-mBJ optimal c* from 14 inexpensive descriptors; RF primary, GP sigma (multiply by ~1.4). v1.2.0 dataset."}
 gp.fit(X,y); rf.fit(X,y)
 joblib.dump({"model":gp,"rf":rf,"meta":meta}, "cstar_model.joblib")
 json.dump(meta, open("cstar_model.meta.json","w"), indent=2)

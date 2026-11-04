@@ -1,3 +1,5 @@
+
 material: SnS2   PBE gap = 1.56 eV   grad_ratio = 2.710
-predicted c* = 1.172 +/- 0.063  (GP, primary)   |  1.190  (RF, cross-check)
-  -> run one TB-mBJ SCF with CMBJ = 1.172  (build_pipeline --cstar / tune_cmbj probe)
+predicted c* = 1.247  (random forest)   |  GP 1.234 +/- 0.050  (sigma x1.4 ~ 0.070)
+  -> run one self-consistent TB-mBJ calculation with CMBJ = 1.247, then check_convergence.py
+

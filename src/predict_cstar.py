@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 """
-predict_cstar.py -- predict the TB-mBJ optimal c* for a material from a CHEAP PBE run.
+predict_cstar.py -- predict the TB-mBJ optimal c* for a material from inexpensive descriptors.
 
-Inputs (all from one PBE relaxation + SCF that writes CHGCAR):
-    a relaxed structure (CONTCAR/POSCAR), the PBE CHGCAR, and the PBE fundamental gap.
-Outputs c* (+ GP uncertainty). Then run ONE TB-mBJ SCF with CMBJ=c* to get a near-experimental gap.
+Inputs: the structure (Materials-Project cell, POSCAR), the CHGCAR of one PBEsol SCF on it,
+    the PBE fundamental gap, and the vasprun.xml of one PBE DOS run (LORBIT=11) for the band center.
+Outputs c* (random forest) and a Gaussian-process sigma. Then run ONE self-consistent TB-mBJ calculation
+with CMBJ=c* and check its convergence with check_convergence.py.
 
 Usage:
     predict_cstar.py --contcar CONTCAR --chgcar CHGCAR --pbe-gap 0.61
@@ -48,9 +49,8 @@ def main():
     cstar,sigma=gp.predict(x, return_std=True); cstar_gp=float(cstar[0]); sig=float(sigma[0])
     cstar_rf=float(rf.predict(x)[0])
     print(f"\nmaterial: {struct.composition.reduced_formula}   PBE gap = {gap:.2f} eV   grad_ratio = {grad:.3f}")
-    # GP is the primary point estimate (best on the 128-material set: LOO MAE 0.100, R^2 0.55)
-    # and supplies the uncertainty sigma; RF is a cross-check.
-    print(f"predicted c* = {cstar_gp:.3f} +/- {sig:.3f}  (GP, primary)   |  {cstar_rf:.3f}  (RF, cross-check)")
-    print(f"  -> run one TB-mBJ SCF with CMBJ = {cstar_gp:.3f}  (build_pipeline --cstar / tune_cmbj probe)\n")
+    # Random forest = primary estimate (as in the paper); GP sigma ranks reliability but is ~1/3 too small.
+    print(f"predicted c* = {cstar_rf:.3f}  (random forest)   |  GP {cstar_gp:.3f} +/- {sig:.3f}  (sigma x1.4 ~ {1.4*sig:.3f})")
+    print(f"  -> run one self-consistent TB-mBJ calculation with CMBJ = {cstar_rf:.3f}, then check_convergence.py\n")
 
 if __name__=="__main__": main()

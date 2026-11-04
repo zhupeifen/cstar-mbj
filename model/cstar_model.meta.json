@@ -13,19 +13,18 @@
     "grad_ratio",
     "mp_pbe_gap",
     "c_selfconsistent",
-    "pbe_gap",
     "band_center"
   ],
-  "n_train": 149,
+  "n_train": 100,
   "target": "c_star",
   "cv_gp": {
-    "loo_mae": 0.1099,
-    "loo_r2": 0.41
+    "loo_mae": 0.0983,
+    "loo_r2": 0.508
   },
   "cv_rf": {
-    "loo_mae": 0.1078,
-    "loo_r2": 0.463
+    "loo_mae": 0.097,
+    "loo_r2": 0.538
   },
-  "trained": "2026-09-25",
-  "note": "predict TB-mBJ optimal c* from cheap descriptors; GP gives sigma. pbe_gap==mp_pbe_gap (PBE gap)."
+  "trained": "2026-11-03",
+  "note": "predict TB-mBJ optimal c* from 14 inexpensive descriptors; RF primary, GP sigma (multiply by ~1.4). v1.2.0 dataset."
 }

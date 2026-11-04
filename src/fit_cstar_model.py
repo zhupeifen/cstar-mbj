@@ -13,7 +13,7 @@ from scipy.stats import pearsonr
 
 rows=list(csv.DictReader(open("cstar_dataset_clean.csv")))
 FEATURES=["n_species","natoms","volume_per_atom","density","mean_electroneg","electroneg_spread",
-          "mean_Z","max_Z","mean_row","valence_e_per_atom","grad_ratio","mp_pbe_gap","c_selfconsistent","pbe_gap",
+          "mean_Z","max_Z","mean_row","valence_e_per_atom","grad_ratio","mp_pbe_gap","c_selfconsistent",
           "band_center"]   # anion-p band center (eV, rel E_F) from a PBE DOS run (LORBIT=11)
 def _num(v):
     m=re.match(r"[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?", str(v).strip())
