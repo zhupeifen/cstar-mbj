@@ -30,8 +30,8 @@ This version replaces the earlier dataset. The changes are:
   Grossmann *et al.* [npj Comput. Mater. 12, 25 (2026)], or the original paper. The DOI is in the
   `gap_source` column. 28 materials without a traceable bulk measurement were removed.
 - **Converged calculations only.** Every mBJ probe was checked for convergence (final energy
-  change below `EDIFF` before `NELM`). Unconverged probes, and the probes of the first batch whose
-  output had not been kept, were recalculated with VASP 6.4.2 (`ALGO=All`, `NELM=500`; then
+  change below `EDIFF` before `NELM`). Unconverged probes, and all probes of the first batch,
+  were recalculated with VASP 6.4.2 (`ALGO=All`, `NELM=500`; then
   `ALGO=Damped`, `TIME=0.1`, `NELM=1000`). The columns `probe_c1.20_source` and
   `probe_c1.70_source` record the origin of each probe gap. 33 materials whose probes could not be
   converged were removed; they are listed in `data/removed_materials.csv`.
